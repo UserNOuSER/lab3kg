@@ -53,12 +53,19 @@
             BigLeftRotateButton = new Button();
             SmallLeftRotateButton = new Button();
             CenterRotateLabel = new Label();
+            TUSURButton = new Button();
             YMirrorButton = new Button();
+            DrawTextLabel = new Label();
             XMirrorButton = new Button();
             MirrorLabel = new Label();
-            TUSURButton = new Button();
-            DrawTextLabel = new Label();
+            splitContainer7 = new SplitContainer();
+            NikitaButton = new Button();
+            AnnaButton = new Button();
+            DenisButton = new Button();
+            KsuhaButton = new Button();
+            OurFiguresLabel = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            splitContainer8 = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -84,6 +91,13 @@
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.Panel2.SuspendLayout();
             splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
+            splitContainer7.Panel1.SuspendLayout();
+            splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
+            splitContainer8.Panel1.SuspendLayout();
+            splitContainer8.Panel2.SuspendLayout();
+            splitContainer8.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -320,8 +334,7 @@
             // 
             // splitContainer4.Panel2
             // 
-            splitContainer4.Panel2.Controls.Add(TUSURButton);
-            splitContainer4.Panel2.Controls.Add(DrawTextLabel);
+            splitContainer4.Panel2.Controls.Add(splitContainer7);
             splitContainer4.Size = new Size(426, 485);
             splitContainer4.SplitterDistance = 208;
             splitContainer4.TabIndex = 0;
@@ -343,11 +356,9 @@
             // 
             // splitContainer6.Panel2
             // 
-            splitContainer6.Panel2.Controls.Add(YMirrorButton);
-            splitContainer6.Panel2.Controls.Add(XMirrorButton);
-            splitContainer6.Panel2.Controls.Add(MirrorLabel);
+            splitContainer6.Panel2.Controls.Add(splitContainer8);
             splitContainer6.Size = new Size(208, 485);
-            splitContainer6.SplitterDistance = 254;
+            splitContainer6.SplitterDistance = 220;
             splitContainer6.TabIndex = 0;
             // 
             // BigRightRotateButton
@@ -398,27 +409,47 @@
             // 
             CenterRotateLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             CenterRotateLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            CenterRotateLabel.Location = new Point(2, 3);
+            CenterRotateLabel.Location = new Point(6, 3);
             CenterRotateLabel.Name = "CenterRotateLabel";
             CenterRotateLabel.Size = new Size(194, 70);
             CenterRotateLabel.TabIndex = 5;
             CenterRotateLabel.Text = "Вращение отн. центра";
             // 
+            // TUSURButton
+            // 
+            TUSURButton.Location = new Point(6, 48);
+            TUSURButton.Name = "TUSURButton";
+            TUSURButton.Size = new Size(198, 29);
+            TUSURButton.TabIndex = 1;
+            TUSURButton.Text = "ТУСУР!!!";
+            TUSURButton.UseVisualStyleBackColor = true;
+            TUSURButton.Click += TUSURButton_Click;
+            // 
             // YMirrorButton
             // 
-            YMirrorButton.Location = new Point(2, 114);
+            YMirrorButton.Location = new Point(1, 113);
             YMirrorButton.Name = "YMirrorButton";
-            YMirrorButton.Size = new Size(186, 29);
+            YMirrorButton.Size = new Size(203, 29);
             YMirrorButton.TabIndex = 1;
             YMirrorButton.Text = "Отражение по OY";
             YMirrorButton.UseVisualStyleBackColor = true;
             YMirrorButton.Click += YMirrorButton_Click;
             // 
+            // DrawTextLabel
+            // 
+            DrawTextLabel.AutoSize = true;
+            DrawTextLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            DrawTextLabel.Location = new Point(6, 8);
+            DrawTextLabel.Name = "DrawTextLabel";
+            DrawTextLabel.Size = new Size(197, 31);
+            DrawTextLabel.TabIndex = 0;
+            DrawTextLabel.Text = "Работа с текстом";
+            // 
             // XMirrorButton
             // 
-            XMirrorButton.Location = new Point(3, 79);
+            XMirrorButton.Location = new Point(1, 78);
             XMirrorButton.Name = "XMirrorButton";
-            XMirrorButton.Size = new Size(186, 29);
+            XMirrorButton.Size = new Size(203, 29);
             XMirrorButton.TabIndex = 1;
             XMirrorButton.Text = "Отражение по OX";
             XMirrorButton.UseVisualStyleBackColor = true;
@@ -427,35 +458,104 @@
             // MirrorLabel
             // 
             MirrorLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            MirrorLabel.Location = new Point(9, 10);
+            MirrorLabel.Location = new Point(6, 9);
             MirrorLabel.Name = "MirrorLabel";
             MirrorLabel.Size = new Size(175, 66);
             MirrorLabel.TabIndex = 0;
             MirrorLabel.Text = "Отражение отн. центра";
             // 
-            // TUSURButton
+            // splitContainer7
             // 
-            TUSURButton.Location = new Point(3, 40);
-            TUSURButton.Name = "TUSURButton";
-            TUSURButton.Size = new Size(210, 29);
-            TUSURButton.TabIndex = 1;
-            TUSURButton.Text = "ТУСУР!!!";
-            TUSURButton.UseVisualStyleBackColor = true;
-            TUSURButton.Click += TUSURButton_Click;
+            splitContainer7.Dock = DockStyle.Fill;
+            splitContainer7.Location = new Point(0, 0);
+            splitContainer7.Name = "splitContainer7";
+            splitContainer7.Orientation = Orientation.Horizontal;
             // 
-            // DrawTextLabel
+            // splitContainer7.Panel1
             // 
-            DrawTextLabel.AutoSize = true;
-            DrawTextLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            DrawTextLabel.Location = new Point(2, 6);
-            DrawTextLabel.Name = "DrawTextLabel";
-            DrawTextLabel.Size = new Size(197, 31);
-            DrawTextLabel.TabIndex = 0;
-            DrawTextLabel.Text = "Работа с текстом";
+            splitContainer7.Panel1.Controls.Add(NikitaButton);
+            splitContainer7.Panel1.Controls.Add(AnnaButton);
+            splitContainer7.Panel1.Controls.Add(DenisButton);
+            splitContainer7.Panel1.Controls.Add(KsuhaButton);
+            splitContainer7.Panel1.Controls.Add(OurFiguresLabel);
+            splitContainer7.Size = new Size(214, 485);
+            splitContainer7.SplitterDistance = 178;
+            splitContainer7.TabIndex = 0;
+            // 
+            // NikitaButton
+            // 
+            NikitaButton.Location = new Point(3, 142);
+            NikitaButton.Name = "NikitaButton";
+            NikitaButton.Size = new Size(208, 29);
+            NikitaButton.TabIndex = 4;
+            NikitaButton.Text = "Фигура Никиты";
+            NikitaButton.UseVisualStyleBackColor = true;
+            NikitaButton.Click += NikitaButton_Click;
+            // 
+            // AnnaButton
+            // 
+            AnnaButton.Location = new Point(2, 107);
+            AnnaButton.Name = "AnnaButton";
+            AnnaButton.Size = new Size(208, 29);
+            AnnaButton.TabIndex = 3;
+            AnnaButton.Text = "Фигура Анны";
+            AnnaButton.UseVisualStyleBackColor = true;
+            AnnaButton.Click += AnnaButton_Click;
+            // 
+            // DenisButton
+            // 
+            DenisButton.Location = new Point(3, 72);
+            DenisButton.Name = "DenisButton";
+            DenisButton.Size = new Size(208, 29);
+            DenisButton.TabIndex = 2;
+            DenisButton.Text = "Фигура Дениса";
+            DenisButton.UseVisualStyleBackColor = true;
+            DenisButton.Click += DenisButton_Click;
+            // 
+            // KsuhaButton
+            // 
+            KsuhaButton.Location = new Point(3, 37);
+            KsuhaButton.Name = "KsuhaButton";
+            KsuhaButton.Size = new Size(208, 29);
+            KsuhaButton.TabIndex = 1;
+            KsuhaButton.Text = "Фигура Ксении";
+            KsuhaButton.UseVisualStyleBackColor = true;
+            KsuhaButton.Click += KsuhaButton_Click;
+            // 
+            // OurFiguresLabel
+            // 
+            OurFiguresLabel.AutoSize = true;
+            OurFiguresLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OurFiguresLabel.Location = new Point(3, 3);
+            OurFiguresLabel.Name = "OurFiguresLabel";
+            OurFiguresLabel.Size = new Size(171, 31);
+            OurFiguresLabel.TabIndex = 0;
+            OurFiguresLabel.Text = "Наши фигуры:";
             // 
             // timer1
             // 
             timer1.Tick += timer1_Tick_1;
+            // 
+            // splitContainer8
+            // 
+            splitContainer8.Dock = DockStyle.Fill;
+            splitContainer8.Location = new Point(0, 0);
+            splitContainer8.Name = "splitContainer8";
+            splitContainer8.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer8.Panel1
+            // 
+            splitContainer8.Panel1.Controls.Add(YMirrorButton);
+            splitContainer8.Panel1.Controls.Add(MirrorLabel);
+            splitContainer8.Panel1.Controls.Add(XMirrorButton);
+            // 
+            // splitContainer8.Panel2
+            // 
+            splitContainer8.Panel2.Controls.Add(TUSURButton);
+            splitContainer8.Panel2.Controls.Add(DrawTextLabel);
+            splitContainer8.Size = new Size(208, 261);
+            splitContainer8.SplitterDistance = 149;
+            splitContainer8.TabIndex = 0;
             // 
             // Form1
             // 
@@ -485,13 +585,21 @@
             splitContainer5.ResumeLayout(false);
             splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel2.ResumeLayout(false);
-            splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
             splitContainer6.Panel1.ResumeLayout(false);
             splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
+            splitContainer7.Panel1.ResumeLayout(false);
+            splitContainer7.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
+            splitContainer7.ResumeLayout(false);
+            splitContainer8.Panel1.ResumeLayout(false);
+            splitContainer8.Panel2.ResumeLayout(false);
+            splitContainer8.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer8).EndInit();
+            splitContainer8.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -527,5 +635,12 @@
         private Label MirrorLabel;
         private Label DrawTextLabel;
         private Button TUSURButton;
+        private SplitContainer splitContainer7;
+        private Label OurFiguresLabel;
+        private Button NikitaButton;
+        private Button AnnaButton;
+        private Button DenisButton;
+        private Button KsuhaButton;
+        private SplitContainer splitContainer8;
     }
 }

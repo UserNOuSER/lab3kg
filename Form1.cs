@@ -2,7 +2,7 @@
 {
     public partial class Form1 : Form
     {
-        public float[,] kv = new float[5, 3]; // матрица тела
+        public float[,] kv = new float[10, 3]; // матрица тела
         public float[,] osi = new float[4, 3]; // матрица координат осей
         public float[,] matr_sdv = new float[3, 3]; // матрица преобразования
         public float a = 1, b = 0, c = 0, d = 1, m, n, p = 0, q = 0, s = 1;
@@ -10,7 +10,7 @@
         public double fi = 0;
         private bool drawAxes = false;
         private bool drawFigure = false;
-        // Мои переменные
+        // переменные Никиты
         private bool drawWord = false;
         public float[,] word_dict = new float[1000, 3];
         public string word = "";
@@ -30,7 +30,7 @@
             e.Graphics.Clear(pictureBox1.BackColor);
 
             if (drawAxes) Draw_osi(e.Graphics);
-            if (drawFigure) Draw_Kv(e.Graphics);
+            if (drawFigure) Draw_Figure(e.Graphics); 
             else if (drawWord) draw_word(e.Graphics);
         }
 
@@ -48,6 +48,7 @@
             n = pictureBox1.Height / 2;
             drawFigure = true;
             drawWord = false;
+            Init_kvadrat();
             pictureBox1.Invalidate();
         }
 
@@ -131,11 +132,13 @@
 
         private void init_figure_12()
         {
+            kv = new float[10, 3];
             kv[0, 0] = 30; kv[0, 1] = 20; kv[0, 2] = 1;
             kv[1, 0] = 60; kv[1, 1] = 40; kv[1, 2] = 1;
             kv[2, 0] = 30; kv[2, 1] = -40; kv[2, 2] = 1;
             kv[3, 0] = -40; kv[3, 1] = -30; kv[3, 2] = 1;
             kv[4, 0] = -60; kv[4, 1] = 30; kv[4, 2] = 1;
+            kv[5, 0] = 30; kv[5, 1] = 20; kv[5, 2] = 1;
         }
 
         private void Init_matr_preob(float a1, float b1, float c1, float d1, float m1, float n1, float p1, float q1, float s1, double fi1)
@@ -185,29 +188,38 @@
             }
             return r;
         }
+        private void Init_kvadrat()
+        {
+            kv = new float[10, 3];
+            kv[0, 0] = -50; kv[0, 1] = 0; kv[0, 2] = 1;
+            kv[1, 0] = 0; kv[1, 1] = 50; kv[1, 2] = 1;
+            kv[2, 0] = 50; kv[2, 1] = 0; kv[2, 2] = 1;
+            kv[3, 0] = 0; kv[3, 1] = -50; kv[3, 2] = 1;
+            kv[4, 0] = -50; kv[4, 1] = 0; kv[4, 2] = 1;
+        }
 
-        private void Draw_Kv(Graphics g = null)
+        private void Draw_Figure(Graphics g = null)
         {
             bool externalGraphics = g != null;
             Graphics gr = externalGraphics ? g : Graphics.FromHwnd(pictureBox1.Handle);
 
             try
             {
-                init_figure_12();
                 Init_matr_preob(a, b, c, d, m, n, p, q, s, fi);
                 float[,] kv1 = Multiply_matr(kv, matr_sdv);
 
                 using (Pen myPen = new Pen(Color.Blue, 2))
                 {
-                    gr.DrawLine(myPen, kv1[0, 0], kv1[0, 1], kv1[1, 0], kv1[1, 1]);
-                    gr.DrawLine(myPen, kv1[1, 0], kv1[1, 1], kv1[2, 0], kv1[2, 1]);
-                    gr.DrawLine(myPen, kv1[2, 0], kv1[2, 1], kv1[3, 0], kv1[3, 1]);
-                    gr.DrawLine(myPen, kv1[3, 0], kv1[3, 1], kv1[4, 0], kv1[4, 1]);
-                    gr.DrawLine(myPen, kv1[4, 0], kv1[4, 1], kv1[0, 0], kv1[0, 1]);
+                    int i = 0;
+                    while (kv[i, 2] + kv[(i + 1) % kv.GetLength(0), 2] > 1)
+                    {
+                        g.DrawLine(myPen, kv1[i, 0], kv1[i, 1], kv1[(i + 1) % (kv.GetLength(0)), 0], kv1[(i + 1) % (kv.GetLength(0)), 1]);
+                        i++;
+                    }
                 }
             }
             finally
-            {
+            { 
                 if (!externalGraphics) gr.Dispose();
             }
         }
@@ -279,12 +291,12 @@
             for (int i = 0; i < word.Length; i++)
             {
                 float[,] literal_vect = cyrillyc_dict.ReturnLiteral(word[i]);
-                if (literal_vect == null) continue; // Добавьте проверку на null
-                for (int j = 0; j < literal_vect.GetLength(0); j++) // Исправлено здесь
+                if (literal_vect == null) continue; 
+                for (int j = 0; j < literal_vect.GetLength(0); j++) 
                 {
                     for (int k = 0; k < 3; k++)
                     {
-                        if (k == 0) word_dict[j + 40 * i, k] = literal_vect[j, k] + (i * 80 - word.Length * 40);
+                        if (k == 0) word_dict[j + 40 * i, k] = literal_vect[j, k] + (i * 100 - word.Length * 50);
                         else word_dict[j + 40 * i, k] = literal_vect[j, k];
                     }
                 }
@@ -298,14 +310,13 @@
             try
             {
                 init_word();
-                float xOffset = m; // Начальная позиция X
-                float yOffset = n; // Начальная позиция Y
+                float xOffset = m; 
+                float yOffset = n; 
 
                 using (Pen myPen = new Pen(wordColor, wordSize))
                 {
                     Init_matr_preob(a, b, c, d, xOffset, yOffset, p, q, s * 5, fi);
                     float[,] transformedWord = Multiply_matr(word_dict, matr_sdv);
-                    // Рисуем линии символа
                     for (int j = 0; j < word_dict.GetLength(0) - 1; j++)
                     {
                         if (word_dict[j + 1, 2] + word_dict[j, 2] == 2) // Проверка на "поднятое перо"
@@ -327,8 +338,8 @@
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            m = (float)e.X;
-            n = (float)e.Y;
+            m = e.X;
+            n = e.Y;
             // Вызов диалогового окна для ввода текста
             string inputWord = Microsoft.VisualBasic.Interaction.InputBox(
                 "Введите слово:",
@@ -341,8 +352,33 @@
                 word = inputWord.ToUpper(); // Для совместимости с кириллицей в словаре
                 drawWord = true;
                 drawFigure = false;
-                pictureBox1.Invalidate(); // Обновление отображения
+                pictureBox1.Invalidate(); 
             }
+        }
+
+        private void KsuhaButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DenisButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AnnaButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NikitaButton_Click(object sender, EventArgs e)
+        {
+            m = pictureBox1.Width / 2;
+            n = pictureBox1.Height / 2;
+            drawFigure = true;
+            drawWord = false;
+            init_figure_12();
+            pictureBox1.Invalidate(); 
         }
     }
 }
