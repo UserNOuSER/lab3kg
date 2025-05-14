@@ -70,6 +70,8 @@
             XMirrorButton = new Button();
             YMirrorButton = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            Button_DrawWord = new Button();
+            Button_DrawSpaceship = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -96,6 +98,7 @@
             splitContainer6.Panel2.SuspendLayout();
             splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
+            splitContainer8.Panel1.SuspendLayout();
             splitContainer8.Panel2.SuspendLayout();
             splitContainer8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
@@ -108,7 +111,7 @@
             // 
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Margin = new Padding(4);
+            splitContainer1.Margin = new Padding(3, 2, 3, 2);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -118,18 +121,17 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer3);
-            splitContainer1.Size = new Size(1652, 646);
-            splitContainer1.SplitterDistance = 829;
-            splitContainer1.SplitterWidth = 5;
+            splitContainer1.Size = new Size(1156, 388);
+            splitContainer1.SplitterDistance = 580;
             splitContainer1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(829, 646);
+            pictureBox1.Size = new Size(580, 388);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Paint += PictureBox1_Paint;
@@ -139,7 +141,7 @@
             // 
             splitContainer3.Dock = DockStyle.Fill;
             splitContainer3.Location = new Point(0, 0);
-            splitContainer3.Margin = new Padding(4);
+            splitContainer3.Margin = new Padding(3, 2, 3, 2);
             splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -149,16 +151,15 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(splitContainer4);
-            splitContainer3.Size = new Size(818, 646);
-            splitContainer3.SplitterDistance = 270;
-            splitContainer3.SplitterWidth = 5;
+            splitContainer3.Size = new Size(572, 388);
+            splitContainer3.SplitterDistance = 188;
             splitContainer3.TabIndex = 1;
             // 
             // splitContainer2
             // 
             splitContainer2.Dock = DockStyle.Fill;
             splitContainer2.Location = new Point(0, 0);
-            splitContainer2.Margin = new Padding(4);
+            splitContainer2.Margin = new Padding(3, 2, 3, 2);
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = Orientation.Horizontal;
             // 
@@ -171,18 +172,18 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(splitContainer5);
-            splitContainer2.Size = new Size(270, 646);
-            splitContainer2.SplitterDistance = 155;
-            splitContainer2.SplitterWidth = 5;
+            splitContainer2.Size = new Size(188, 388);
+            splitContainer2.SplitterDistance = 93;
+            splitContainer2.SplitterWidth = 3;
             splitContainer2.TabIndex = 0;
             // 
             // ClearButton
             // 
             ClearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ClearButton.Location = new Point(0, 106);
-            ClearButton.Margin = new Padding(4);
+            ClearButton.Location = new Point(0, 64);
+            ClearButton.Margin = new Padding(3, 2, 3, 2);
             ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(263, 36);
+            ClearButton.Size = new Size(183, 22);
             ClearButton.TabIndex = 2;
             ClearButton.Text = "Очистить";
             ClearButton.UseVisualStyleBackColor = true;
@@ -191,10 +192,10 @@
             // DrawFigureButton
             // 
             DrawFigureButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            DrawFigureButton.Location = new Point(0, 58);
-            DrawFigureButton.Margin = new Padding(4);
+            DrawFigureButton.Location = new Point(0, 35);
+            DrawFigureButton.Margin = new Padding(3, 2, 3, 2);
             DrawFigureButton.Name = "DrawFigureButton";
-            DrawFigureButton.Size = new Size(263, 36);
+            DrawFigureButton.Size = new Size(183, 22);
             DrawFigureButton.TabIndex = 1;
             DrawFigureButton.Text = "Нарисовать фигуру";
             DrawFigureButton.UseVisualStyleBackColor = true;
@@ -203,10 +204,10 @@
             // DrawAxisButton
             // 
             DrawAxisButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            DrawAxisButton.Location = new Point(0, 10);
-            DrawAxisButton.Margin = new Padding(4);
+            DrawAxisButton.Location = new Point(0, 6);
+            DrawAxisButton.Margin = new Padding(3, 2, 3, 2);
             DrawAxisButton.Name = "DrawAxisButton";
-            DrawAxisButton.Size = new Size(263, 36);
+            DrawAxisButton.Size = new Size(183, 22);
             DrawAxisButton.TabIndex = 0;
             DrawAxisButton.Text = "Нарисовать оси";
             DrawAxisButton.UseVisualStyleBackColor = true;
@@ -216,7 +217,7 @@
             // 
             splitContainer5.Dock = DockStyle.Fill;
             splitContainer5.Location = new Point(0, 0);
-            splitContainer5.Margin = new Padding(4);
+            splitContainer5.Margin = new Padding(3, 2, 3, 2);
             splitContainer5.Name = "splitContainer5";
             splitContainer5.Orientation = Orientation.Horizontal;
             // 
@@ -234,18 +235,18 @@
             splitContainer5.Panel2.Controls.Add(DecreaseButton);
             splitContainer5.Panel2.Controls.Add(IncreaseButton);
             splitContainer5.Panel2.Controls.Add(ResizeLabel);
-            splitContainer5.Size = new Size(270, 486);
-            splitContainer5.SplitterDistance = 302;
-            splitContainer5.SplitterWidth = 5;
+            splitContainer5.Size = new Size(188, 292);
+            splitContainer5.SplitterDistance = 181;
+            splitContainer5.SplitterWidth = 3;
             splitContainer5.TabIndex = 0;
             // 
             // StartStopButton
             // 
             StartStopButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            StartStopButton.Location = new Point(4, 238);
-            StartStopButton.Margin = new Padding(4);
+            StartStopButton.Location = new Point(3, 143);
+            StartStopButton.Margin = new Padding(3, 2, 3, 2);
             StartStopButton.Name = "StartStopButton";
-            StartStopButton.Size = new Size(263, 36);
+            StartStopButton.Size = new Size(183, 22);
             StartStopButton.TabIndex = 11;
             StartStopButton.Text = "Старт";
             StartStopButton.UseVisualStyleBackColor = true;
@@ -254,10 +255,10 @@
             // UpShiftButton
             // 
             UpShiftButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            UpShiftButton.Location = new Point(5, 198);
-            UpShiftButton.Margin = new Padding(4);
+            UpShiftButton.Location = new Point(4, 119);
+            UpShiftButton.Margin = new Padding(3, 2, 3, 2);
             UpShiftButton.Name = "UpShiftButton";
-            UpShiftButton.Size = new Size(263, 36);
+            UpShiftButton.Size = new Size(183, 22);
             UpShiftButton.TabIndex = 10;
             UpShiftButton.Text = "По оси OY вверх";
             UpShiftButton.UseVisualStyleBackColor = true;
@@ -266,10 +267,10 @@
             // DownShiftButton
             // 
             DownShiftButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            DownShiftButton.Location = new Point(5, 154);
-            DownShiftButton.Margin = new Padding(4);
+            DownShiftButton.Location = new Point(4, 92);
+            DownShiftButton.Margin = new Padding(3, 2, 3, 2);
             DownShiftButton.Name = "DownShiftButton";
-            DownShiftButton.Size = new Size(263, 36);
+            DownShiftButton.Size = new Size(183, 22);
             DownShiftButton.TabIndex = 9;
             DownShiftButton.Text = "По оси OY вниз";
             DownShiftButton.UseVisualStyleBackColor = true;
@@ -278,10 +279,10 @@
             // LeftShiftButton
             // 
             LeftShiftButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            LeftShiftButton.Location = new Point(4, 110);
-            LeftShiftButton.Margin = new Padding(4);
+            LeftShiftButton.Location = new Point(3, 66);
+            LeftShiftButton.Margin = new Padding(3, 2, 3, 2);
             LeftShiftButton.Name = "LeftShiftButton";
-            LeftShiftButton.Size = new Size(263, 36);
+            LeftShiftButton.Size = new Size(183, 22);
             LeftShiftButton.TabIndex = 8;
             LeftShiftButton.Text = "По оси ОХ влево";
             LeftShiftButton.UseVisualStyleBackColor = true;
@@ -290,10 +291,10 @@
             // RightShiftButton
             // 
             RightShiftButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            RightShiftButton.Location = new Point(5, 67);
-            RightShiftButton.Margin = new Padding(4);
+            RightShiftButton.Location = new Point(4, 40);
+            RightShiftButton.Margin = new Padding(3, 2, 3, 2);
             RightShiftButton.Name = "RightShiftButton";
-            RightShiftButton.Size = new Size(263, 36);
+            RightShiftButton.Size = new Size(183, 22);
             RightShiftButton.TabIndex = 7;
             RightShiftButton.Text = "По оси ОХ вправо";
             RightShiftButton.UseVisualStyleBackColor = true;
@@ -303,10 +304,9 @@
             // 
             ShiftLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             ShiftLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 204);
-            ShiftLabel.Location = new Point(5, 24);
-            ShiftLabel.Margin = new Padding(4, 0, 4, 0);
+            ShiftLabel.Location = new Point(4, 14);
             ShiftLabel.Name = "ShiftLabel";
-            ShiftLabel.Size = new Size(263, 39);
+            ShiftLabel.Size = new Size(183, 23);
             ShiftLabel.TabIndex = 6;
             ShiftLabel.Text = "СДВиГ";
             ShiftLabel.TextAlign = ContentAlignment.TopCenter;
@@ -314,10 +314,10 @@
             // DecreaseButton
             // 
             DecreaseButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            DecreaseButton.Location = new Point(5, 93);
-            DecreaseButton.Margin = new Padding(4);
+            DecreaseButton.Location = new Point(4, 57);
+            DecreaseButton.Margin = new Padding(3, 2, 3, 2);
             DecreaseButton.Name = "DecreaseButton";
-            DecreaseButton.Size = new Size(259, 36);
+            DecreaseButton.Size = new Size(180, 22);
             DecreaseButton.TabIndex = 1;
             DecreaseButton.Text = "Уменьшить";
             DecreaseButton.UseVisualStyleBackColor = true;
@@ -326,10 +326,10 @@
             // IncreaseButton
             // 
             IncreaseButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            IncreaseButton.Location = new Point(4, 49);
-            IncreaseButton.Margin = new Padding(4);
+            IncreaseButton.Location = new Point(3, 31);
+            IncreaseButton.Margin = new Padding(3, 2, 3, 2);
             IncreaseButton.Name = "IncreaseButton";
-            IncreaseButton.Size = new Size(260, 36);
+            IncreaseButton.Size = new Size(181, 22);
             IncreaseButton.TabIndex = 1;
             IncreaseButton.Text = "Увеличить";
             IncreaseButton.UseVisualStyleBackColor = true;
@@ -340,10 +340,9 @@
             ResizeLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             ResizeLabel.AutoSize = true;
             ResizeLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ResizeLabel.Location = new Point(67, 7);
-            ResizeLabel.Margin = new Padding(4, 0, 4, 0);
+            ResizeLabel.Location = new Point(47, 6);
             ResizeLabel.Name = "ResizeLabel";
-            ResizeLabel.Size = new Size(132, 38);
+            ResizeLabel.Size = new Size(92, 25);
             ResizeLabel.TabIndex = 0;
             ResizeLabel.Text = "Масштаб";
             // 
@@ -351,7 +350,7 @@
             // 
             splitContainer4.Dock = DockStyle.Fill;
             splitContainer4.Location = new Point(0, 0);
-            splitContainer4.Margin = new Padding(4);
+            splitContainer4.Margin = new Padding(3, 2, 3, 2);
             splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -361,16 +360,15 @@
             // splitContainer4.Panel2
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer7);
-            splitContainer4.Size = new Size(543, 646);
-            splitContainer4.SplitterDistance = 264;
-            splitContainer4.SplitterWidth = 5;
+            splitContainer4.Size = new Size(380, 388);
+            splitContainer4.SplitterDistance = 184;
             splitContainer4.TabIndex = 0;
             // 
             // splitContainer6
             // 
             splitContainer6.Dock = DockStyle.Fill;
             splitContainer6.Location = new Point(0, 0);
-            splitContainer6.Margin = new Padding(4);
+            splitContainer6.Margin = new Padding(3, 2, 3, 2);
             splitContainer6.Name = "splitContainer6";
             splitContainer6.Orientation = Orientation.Horizontal;
             // 
@@ -385,18 +383,18 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(splitContainer8);
-            splitContainer6.Size = new Size(264, 646);
-            splitContainer6.SplitterDistance = 292;
-            splitContainer6.SplitterWidth = 5;
+            splitContainer6.Size = new Size(184, 388);
+            splitContainer6.SplitterDistance = 175;
+            splitContainer6.SplitterWidth = 3;
             splitContainer6.TabIndex = 0;
             // 
             // BigRightRotateButton
             // 
             BigRightRotateButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            BigRightRotateButton.Location = new Point(1, 235);
-            BigRightRotateButton.Margin = new Padding(4);
+            BigRightRotateButton.Location = new Point(1, 141);
+            BigRightRotateButton.Margin = new Padding(3, 2, 3, 2);
             BigRightRotateButton.Name = "BigRightRotateButton";
-            BigRightRotateButton.Size = new Size(258, 36);
+            BigRightRotateButton.Size = new Size(180, 22);
             BigRightRotateButton.TabIndex = 9;
             BigRightRotateButton.Text = "много вправо";
             BigRightRotateButton.UseVisualStyleBackColor = true;
@@ -405,10 +403,10 @@
             // SmallRightRotateButton
             // 
             SmallRightRotateButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            SmallRightRotateButton.Location = new Point(1, 191);
-            SmallRightRotateButton.Margin = new Padding(4);
+            SmallRightRotateButton.Location = new Point(1, 115);
+            SmallRightRotateButton.Margin = new Padding(3, 2, 3, 2);
             SmallRightRotateButton.Name = "SmallRightRotateButton";
-            SmallRightRotateButton.Size = new Size(258, 36);
+            SmallRightRotateButton.Size = new Size(180, 22);
             SmallRightRotateButton.TabIndex = 8;
             SmallRightRotateButton.Text = "немного вправо";
             SmallRightRotateButton.UseVisualStyleBackColor = true;
@@ -417,10 +415,10 @@
             // BigLeftRotateButton
             // 
             BigLeftRotateButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            BigLeftRotateButton.Location = new Point(4, 148);
-            BigLeftRotateButton.Margin = new Padding(4);
+            BigLeftRotateButton.Location = new Point(3, 89);
+            BigLeftRotateButton.Margin = new Padding(3, 2, 3, 2);
             BigLeftRotateButton.Name = "BigLeftRotateButton";
-            BigLeftRotateButton.Size = new Size(255, 36);
+            BigLeftRotateButton.Size = new Size(177, 22);
             BigLeftRotateButton.TabIndex = 7;
             BigLeftRotateButton.Text = "много влево";
             BigLeftRotateButton.UseVisualStyleBackColor = true;
@@ -429,10 +427,10 @@
             // SmallLeftRotateButton
             // 
             SmallLeftRotateButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            SmallLeftRotateButton.Location = new Point(2, 104);
-            SmallLeftRotateButton.Margin = new Padding(4);
+            SmallLeftRotateButton.Location = new Point(1, 62);
+            SmallLeftRotateButton.Margin = new Padding(3, 2, 3, 2);
             SmallLeftRotateButton.Name = "SmallLeftRotateButton";
-            SmallLeftRotateButton.Size = new Size(252, 36);
+            SmallLeftRotateButton.Size = new Size(175, 22);
             SmallLeftRotateButton.TabIndex = 6;
             SmallLeftRotateButton.Text = "немного влево";
             SmallLeftRotateButton.UseVisualStyleBackColor = true;
@@ -442,10 +440,9 @@
             // 
             CenterRotateLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             CenterRotateLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            CenterRotateLabel.Location = new Point(8, 13);
-            CenterRotateLabel.Margin = new Padding(4, 0, 4, 0);
+            CenterRotateLabel.Location = new Point(6, 8);
             CenterRotateLabel.Name = "CenterRotateLabel";
-            CenterRotateLabel.Size = new Size(246, 88);
+            CenterRotateLabel.Size = new Size(171, 53);
             CenterRotateLabel.TabIndex = 5;
             CenterRotateLabel.Text = "Вращение отн. центра";
             // 
@@ -453,36 +450,40 @@
             // 
             splitContainer8.Dock = DockStyle.Fill;
             splitContainer8.Location = new Point(0, 0);
-            splitContainer8.Margin = new Padding(4);
+            splitContainer8.Margin = new Padding(3, 2, 3, 2);
             splitContainer8.Name = "splitContainer8";
             splitContainer8.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer8.Panel1
+            // 
+            splitContainer8.Panel1.Controls.Add(Button_DrawSpaceship);
+            splitContainer8.Panel1.Controls.Add(Button_DrawWord);
             // 
             // splitContainer8.Panel2
             // 
             splitContainer8.Panel2.Controls.Add(DrawTextLabel);
             splitContainer8.Panel2.Controls.Add(TUSURButton);
-            splitContainer8.Size = new Size(264, 349);
-            splitContainer8.SplitterDistance = 198;
-            splitContainer8.SplitterWidth = 5;
+            splitContainer8.Size = new Size(184, 210);
+            splitContainer8.SplitterDistance = 119;
+            splitContainer8.SplitterWidth = 3;
             splitContainer8.TabIndex = 0;
             // 
             // DrawTextLabel
             // 
             DrawTextLabel.AutoSize = true;
             DrawTextLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            DrawTextLabel.Location = new Point(8, 11);
-            DrawTextLabel.Margin = new Padding(4, 0, 4, 0);
+            DrawTextLabel.Location = new Point(6, 7);
             DrawTextLabel.Name = "DrawTextLabel";
-            DrawTextLabel.Size = new Size(241, 38);
+            DrawTextLabel.Size = new Size(161, 25);
             DrawTextLabel.TabIndex = 0;
             DrawTextLabel.Text = "Работа с текстом";
             // 
             // TUSURButton
             // 
-            TUSURButton.Location = new Point(8, 53);
-            TUSURButton.Margin = new Padding(4);
+            TUSURButton.Location = new Point(6, 32);
+            TUSURButton.Margin = new Padding(3, 2, 3, 2);
             TUSURButton.Name = "TUSURButton";
-            TUSURButton.Size = new Size(248, 36);
+            TUSURButton.Size = new Size(174, 22);
             TUSURButton.TabIndex = 1;
             TUSURButton.Text = "ТУСУР!!!";
             TUSURButton.UseVisualStyleBackColor = true;
@@ -492,7 +493,7 @@
             // 
             splitContainer7.Dock = DockStyle.Fill;
             splitContainer7.Location = new Point(0, 0);
-            splitContainer7.Margin = new Padding(4);
+            splitContainer7.Margin = new Padding(3, 2, 3, 2);
             splitContainer7.Name = "splitContainer7";
             splitContainer7.Orientation = Orientation.Horizontal;
             // 
@@ -513,17 +514,17 @@
             splitContainer7.Panel2.Controls.Add(XYMirrorRelativeCurrent);
             splitContainer7.Panel2.Controls.Add(XMirrorButton);
             splitContainer7.Panel2.Controls.Add(YMirrorButton);
-            splitContainer7.Size = new Size(274, 646);
-            splitContainer7.SplitterDistance = 250;
-            splitContainer7.SplitterWidth = 5;
+            splitContainer7.Size = new Size(192, 388);
+            splitContainer7.SplitterDistance = 150;
+            splitContainer7.SplitterWidth = 3;
             splitContainer7.TabIndex = 0;
             // 
             // NikitaButton
             // 
-            NikitaButton.Location = new Point(4, 188);
-            NikitaButton.Margin = new Padding(4);
+            NikitaButton.Location = new Point(3, 113);
+            NikitaButton.Margin = new Padding(3, 2, 3, 2);
             NikitaButton.Name = "NikitaButton";
-            NikitaButton.Size = new Size(260, 36);
+            NikitaButton.Size = new Size(182, 22);
             NikitaButton.TabIndex = 4;
             NikitaButton.Text = "Фигура Никиты";
             NikitaButton.UseVisualStyleBackColor = true;
@@ -531,10 +532,10 @@
             // 
             // AnnaButton
             // 
-            AnnaButton.Location = new Point(3, 144);
-            AnnaButton.Margin = new Padding(4);
+            AnnaButton.Location = new Point(2, 86);
+            AnnaButton.Margin = new Padding(3, 2, 3, 2);
             AnnaButton.Name = "AnnaButton";
-            AnnaButton.Size = new Size(260, 36);
+            AnnaButton.Size = new Size(182, 22);
             AnnaButton.TabIndex = 3;
             AnnaButton.Text = "Фигура Анны";
             AnnaButton.UseVisualStyleBackColor = true;
@@ -542,10 +543,10 @@
             // 
             // DenisButton
             // 
-            DenisButton.Location = new Point(3, 100);
-            DenisButton.Margin = new Padding(4);
+            DenisButton.Location = new Point(2, 60);
+            DenisButton.Margin = new Padding(3, 2, 3, 2);
             DenisButton.Name = "DenisButton";
-            DenisButton.Size = new Size(260, 36);
+            DenisButton.Size = new Size(182, 22);
             DenisButton.TabIndex = 2;
             DenisButton.Text = "Фигура Дениса";
             DenisButton.UseVisualStyleBackColor = true;
@@ -553,10 +554,10 @@
             // 
             // KsuhaButton
             // 
-            KsuhaButton.Location = new Point(4, 56);
-            KsuhaButton.Margin = new Padding(4);
+            KsuhaButton.Location = new Point(3, 34);
+            KsuhaButton.Margin = new Padding(3, 2, 3, 2);
             KsuhaButton.Name = "KsuhaButton";
-            KsuhaButton.Size = new Size(260, 36);
+            KsuhaButton.Size = new Size(182, 22);
             KsuhaButton.TabIndex = 1;
             KsuhaButton.Text = "Фигура Ксении";
             KsuhaButton.UseVisualStyleBackColor = true;
@@ -566,18 +567,18 @@
             // 
             OurFiguresLabel.AutoSize = true;
             OurFiguresLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            OurFiguresLabel.Location = new Point(31, 14);
-            OurFiguresLabel.Margin = new Padding(4, 0, 4, 0);
+            OurFiguresLabel.Location = new Point(22, 8);
             OurFiguresLabel.Name = "OurFiguresLabel";
-            OurFiguresLabel.Size = new Size(208, 38);
+            OurFiguresLabel.Size = new Size(141, 25);
             OurFiguresLabel.TabIndex = 0;
             OurFiguresLabel.Text = "Наши фигуры:";
             // 
             // XYMirrorRelativeStart
             // 
-            XYMirrorRelativeStart.Location = new Point(7, 262);
+            XYMirrorRelativeStart.Location = new Point(5, 157);
+            XYMirrorRelativeStart.Margin = new Padding(2);
             XYMirrorRelativeStart.Name = "XYMirrorRelativeStart";
-            XYMirrorRelativeStart.Size = new Size(252, 34);
+            XYMirrorRelativeStart.Size = new Size(176, 20);
             XYMirrorRelativeStart.TabIndex = 5;
             XYMirrorRelativeStart.Text = "Относительно прямой X = Y";
             XYMirrorRelativeStart.UseVisualStyleBackColor = true;
@@ -585,9 +586,10 @@
             // 
             // YMirrorRelativeStart
             // 
-            YMirrorRelativeStart.Location = new Point(7, 222);
+            YMirrorRelativeStart.Location = new Point(5, 133);
+            YMirrorRelativeStart.Margin = new Padding(2);
             YMirrorRelativeStart.Name = "YMirrorRelativeStart";
-            YMirrorRelativeStart.Size = new Size(254, 34);
+            YMirrorRelativeStart.Size = new Size(178, 20);
             YMirrorRelativeStart.TabIndex = 4;
             YMirrorRelativeStart.Text = "Относительно оси Y";
             YMirrorRelativeStart.UseVisualStyleBackColor = true;
@@ -595,9 +597,10 @@
             // 
             // XMirrorRelativeStart
             // 
-            XMirrorRelativeStart.Location = new Point(7, 182);
+            XMirrorRelativeStart.Location = new Point(5, 109);
+            XMirrorRelativeStart.Margin = new Padding(2);
             XMirrorRelativeStart.Name = "XMirrorRelativeStart";
-            XMirrorRelativeStart.Size = new Size(254, 34);
+            XMirrorRelativeStart.Size = new Size(178, 20);
             XMirrorRelativeStart.TabIndex = 3;
             XMirrorRelativeStart.Text = "Относительно оси X";
             XMirrorRelativeStart.UseVisualStyleBackColor = true;
@@ -606,18 +609,18 @@
             // MirrorLabel
             // 
             MirrorLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            MirrorLabel.Location = new Point(68, 16);
-            MirrorLabel.Margin = new Padding(4, 0, 4, 0);
+            MirrorLabel.Location = new Point(48, 10);
             MirrorLabel.Name = "MirrorLabel";
-            MirrorLabel.Size = new Size(135, 35);
+            MirrorLabel.Size = new Size(94, 21);
             MirrorLabel.TabIndex = 0;
             MirrorLabel.Text = "Отражение";
             // 
             // XYMirrorRelativeCurrent
             // 
-            XYMirrorRelativeCurrent.Location = new Point(7, 142);
+            XYMirrorRelativeCurrent.Location = new Point(5, 85);
+            XYMirrorRelativeCurrent.Margin = new Padding(2);
             XYMirrorRelativeCurrent.Name = "XYMirrorRelativeCurrent";
-            XYMirrorRelativeCurrent.Size = new Size(254, 34);
+            XYMirrorRelativeCurrent.Size = new Size(178, 20);
             XYMirrorRelativeCurrent.TabIndex = 2;
             XYMirrorRelativeCurrent.Text = "По Х=Y отн. центра фигруры";
             XYMirrorRelativeCurrent.UseVisualStyleBackColor = true;
@@ -625,10 +628,10 @@
             // 
             // XMirrorButton
             // 
-            XMirrorButton.Location = new Point(7, 55);
-            XMirrorButton.Margin = new Padding(4);
+            XMirrorButton.Location = new Point(5, 33);
+            XMirrorButton.Margin = new Padding(3, 2, 3, 2);
             XMirrorButton.Name = "XMirrorButton";
-            XMirrorButton.Size = new Size(252, 36);
+            XMirrorButton.Size = new Size(176, 22);
             XMirrorButton.TabIndex = 1;
             XMirrorButton.Text = "По OX отн. центра фигруры";
             XMirrorButton.UseVisualStyleBackColor = true;
@@ -636,10 +639,10 @@
             // 
             // YMirrorButton
             // 
-            YMirrorButton.Location = new Point(7, 99);
-            YMirrorButton.Margin = new Padding(4);
+            YMirrorButton.Location = new Point(5, 59);
+            YMirrorButton.Margin = new Padding(3, 2, 3, 2);
             YMirrorButton.Name = "YMirrorButton";
-            YMirrorButton.Size = new Size(254, 36);
+            YMirrorButton.Size = new Size(178, 22);
             YMirrorButton.TabIndex = 1;
             YMirrorButton.Text = "По OY отн. центра фигруры";
             YMirrorButton.UseVisualStyleBackColor = true;
@@ -649,13 +652,33 @@
             // 
             timer1.Tick += timer1_Tick_1;
             // 
+            // Button_DrawWord
+            // 
+            Button_DrawWord.Location = new Point(3, 23);
+            Button_DrawWord.Name = "Button_DrawWord";
+            Button_DrawWord.Size = new Size(178, 23);
+            Button_DrawWord.TabIndex = 0;
+            Button_DrawWord.Text = "Отрисовка слова";
+            Button_DrawWord.UseVisualStyleBackColor = true;
+            Button_DrawWord.Click += Button_DrawWord_Click;
+            // 
+            // Button_DrawSpaceship
+            // 
+            Button_DrawSpaceship.Location = new Point(3, 70);
+            Button_DrawSpaceship.Name = "Button_DrawSpaceship";
+            Button_DrawSpaceship.Size = new Size(178, 23);
+            Button_DrawSpaceship.TabIndex = 1;
+            Button_DrawSpaceship.Text = "Отрисовка корабля";
+            Button_DrawSpaceship.UseVisualStyleBackColor = true;
+            Button_DrawSpaceship.Click += Button_DrawSpaceship_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1652, 646);
+            ClientSize = new Size(1156, 388);
             Controls.Add(splitContainer1);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Form1";
             splitContainer1.Panel1.ResumeLayout(false);
@@ -684,6 +707,7 @@
             splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
             splitContainer6.ResumeLayout(false);
+            splitContainer8.Panel1.ResumeLayout(false);
             splitContainer8.Panel2.ResumeLayout(false);
             splitContainer8.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer8).EndInit();
@@ -739,5 +763,7 @@
         private Button XYMirrorRelativeCurrent;
         private Button XYMirrorRelativeStart;
         private Button YMirrorRelativeStart;
+        private Button Button_DrawSpaceship;
+        private Button Button_DrawWord;
     }
 }
