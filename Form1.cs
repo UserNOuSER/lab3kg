@@ -81,7 +81,7 @@ namespace lab3kg
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            a = 1; b = 0; c = 0; d = 1; p = 0; q = 0; s = 1; fi = 0;
+            a = 1; b = 0; c = 0; d = 1; p = 0; q = 0; s = 1; fi = 0; m1 = 0; n1 = 0;
             m = pictureBox1.Width / 2;
             n = pictureBox1.Height / 2;
             drawAxes = false;
@@ -150,7 +150,7 @@ namespace lab3kg
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            if (!drawSpaceship) m++;
+            if (!drawSpaceship) m1++;
             else
             {
                 fiSpaceship += 2 * Math.PI / 180;
@@ -165,7 +165,30 @@ namespace lab3kg
             }
             pictureBox1.Invalidate();
         }
+        private void Init_strela()
+        {
+            kv = new float[10, 3];
 
+            // Верхний левый угол 
+            kv[0, 0] = -60; kv[0, 1] = 100; kv[0, 2] = 1;
+
+            // Верхний правый угол
+            kv[1, 0] = 40; kv[1, 1] = 100; kv[1, 2] = 1;
+
+            // Нижний центральный угол 
+            kv[2, 0] = 40; kv[2, 1] = -50; kv[2, 2] = 1;
+
+            // Нижний правый угол 
+            kv[3, 0] = 0; kv[3, 1] = -10; kv[3, 2] = 1;
+
+            // Нижний левый угол 
+            kv[4, 0] = -40; kv[4, 1] = -50; kv[4, 2] = 1;
+
+            // Снова верхний левый угол 
+            kv[5, 0] = -60; kv[5, 1] = 100; kv[5, 2] = 1;
+
+
+        }
         private void init_figure_12()
         {
             kv = new float[10, 3];
@@ -451,7 +474,7 @@ namespace lab3kg
 
                 using (Pen myPen = new Pen(wordColor, wordSize))
                 {
-                    Init_matr_preob(a, b, c, d, xOffset, yOffset, p, q, s * 5, fi);
+                    Init_matr_preob(a, b, c, d, xOffset + m1, yOffset + n1, p, q, s * 5, fi);
                     float[,] transformedWord = Multiply_matr(word_dict, matr_sdv);
                     for (int j = 0; j < word_dict.GetLength(0) - 1; j++)
                     {
@@ -508,7 +531,13 @@ namespace lab3kg
 
         private void KsuhaButton_Click(object sender, EventArgs e)
         {
-
+            m = pictureBox1.Width / 2;
+            n = pictureBox1.Height / 2;
+            s = 1;
+            drawFigure = true;
+            drawWord = false;
+            Init_strela();
+            pictureBox1.Invalidate();
         }
 
         private void DenisButton_Click(object sender, EventArgs e)
@@ -612,21 +641,16 @@ namespace lab3kg
         // Отражение относительно прямой X=Y (относительно текущих координат)
         private void ReflectXYCurrent()
         {
-            // Матрица отражения относительно X = Y для текущего положения
-            float[,] ReflectMatr = new float[3, 3] {
-                { 0, 1, 0 },
-                { 1, 0, 0 },
-                { 0, 0, 1 }
-            };
+            a*= -1;
+            d*= -1;
 
-            // Применяем к текущим координатам
-            kv = Multiply_matr(kv, ReflectMatr);
             currentFigureColor = Color.Pink;
             pictureBox1.Invalidate();
         }
 
         private void Button_DrawWord_Click(object sender, EventArgs e)
         {
+            
             drawWord = true;
             drawSpaceship = false;
         }
